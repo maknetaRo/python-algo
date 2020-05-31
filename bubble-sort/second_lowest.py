@@ -29,20 +29,20 @@ def second_lowest(arr):
 
 def sort_by_letter(arr):
     arr = second_lowest(arr)
-    print(arr)
-    end_index = len(arr) - 1
-    alphabet = "abcdefghijklmnopqrstuvwxyz"
-    sorted = False
+    if len(arr) > 1:
+        end_index = len(arr) - 1
+        alphabet = "abcdefghijklmnopqrstuvwxyz"
+        sorted = False
 
-    while not sorted:
-        sorted = True
-        for i in range(0, end_index):
-            for j in range(0, len(arr) - 1):
-                if alphabet.index(arr[i][j].lower()) > alphabet.index(
-                    arr[i + 1][j].lower()
-                ):
-                    sorted = False
-                    arr[i], arr[i + 1] = arr[i + 1], arr[i]
+        while not sorted:
+            sorted = True
+            for i in range(0, end_index):
+                for j in range(0, len(arr) - 1):
+                    if alphabet.index(arr[i][j].lower()) > alphabet.index(
+                        arr[i + 1][j].lower()
+                    ):
+                        sorted = False
+                        arr[i], arr[i + 1] = arr[i + 1], arr[i]
     return arr
 
 
